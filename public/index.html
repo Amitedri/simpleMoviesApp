@@ -11,22 +11,95 @@
     />
     <title>MoviesDB</title>
     <meta name="description" content="One place to get all your movies info!" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="./assets/css/mainStyles.css" />
     <script src="./assets/js/main.js"></script>
   </head>
   <body>
-    <div class="w-100 bg-blue text-white m-0 d-flex flex-row justify-content-center align-items-center p-1" id="nvarbar">
-      <div style="width: 75px" class=" text-center m-1" id="cont">CONTACT</div>
-      <div style="width: 75px" class="text-center m-1 borderBottomWhite">HOME</div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body col-12 d-flex flex-row">
+            <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+              <div class="col-12 d-flex flex-row flex-wrap justify-content-start align-items-center">
+                <span class="fs-5" >Name: </span>
+                <span class="" id="movieName">Movie</span>
+              </div>
+              <div class="col-12 d-flex flex-row justify-content-start align-items-center">
+                <span class="fs-5">Langauge: </span>
+                <span class="" id="movieLang">English</span>
+              </div>
+              <div class="col-12 d-flex flex-row justify-content-start align-items-center">
+                <span class="fs-5">Release Date: </span>
+                <span class="" id="movieDate">12.5.2022</span>
+              </div>
+              <div class="col-12 d-flex flex-column justify-content-start align-items-stat">
+                <span class="fs-5">Overview</span>
+                <span id="movieOverview" class="fontSM"
+                  >Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed
+                  from his earthly tomb, ready to unleash his unique form of justice on the modern world.</span
+                >
+              </div>
+            </div>
+            <img id="movieImage" src="https://image.tmdb.org/t/p/w500/3uDwqxbr0j34rJVJMOW6o8Upw5W.jpg" class="rounded shadow-lg align-self-center" height="200" width="50%" />
+          </div>
+          <hr class="m-0 col-6 align-self-center"/>
+          <div class="col-10  d-flex flex-column justify-content-center align-items-center align-self-center">
+            <span class="align-self-center border-bottom">Genre</span>
+          <div class="col-12  d-flex flex-row flex-wrap justify-content-center align-items-center" id="genre">
+          </div>
+        </div>
+        <div
+        class="col-6 p-2 bg-info text-white align-self-center rounded text-center favBtn m-1 pointer m-2"
+        id="favControl"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        data-id="1"
+        data-votes="1"
+        data-rate="1"
+        data-src="1"
+        data-lang="1"
+        
+      >
+        Add to favorites
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+      </div>
+
+        </div>
+      </div>
     </div>
-    <div class="w-100 bg-light d-flex flex-column justify-content-center align-items-center bottomShadow">
+    <div class="col-12 bg-blue text-white m-0 d-flex flex-row justify-content-center align-items-center fs-3 p-1" id="nvarbar">
+      <!-- <div style="width: 75px" class="text-center m-1 borderBottomWhite"></div>
+       -->
+       Simple Movies App
+    </div>
+    <div class="col-12 bg-light d-flex flex-column justify-content-center align-items-center bottomShadow">
       <div class="navWrap w-100 bg-light d-flex flex-row flex-wrap justify-content-center align-items-center navWrap">
-        <h1 class="fs-3 text-white fw-5">Recommanded for you:</h1>
-        <div style="padding: 1%" id="popular" class="navItem borderWhite rounded text-white m-1 pointer">Most Pupular</div>
-        <div style="padding: 1%" id="current" class="navItem borderWhite rounded text-white m-1 pointer">Streaming Now</div>
-        <div style="padding: 1%" id="favourites" class="navItem borderWhite rounded text-white m-1 pointer">My Favourites</div>
+        <h1 class="fs-3 text-dark fw-5">Recommanded for you:</h1>
+        <div style="padding: 1%" id="popular" class="navItem borderWhite rounded text-dark m-1 pointer">Most Pupular</div>
+        <div style="padding: 1%" id="current" class="navItem borderWhite rounded text-dark m-1 pointer">Streaming Now</div>
+        <div style="padding: 1%" id="favourites" class="navItem borderWhite rounded text-dark m-1 pointer">My favorites</div>
       </div>
     </div>
     <div class="w-100 d-flex flex-row flex-wrap justify-content-center align-items-center" id="renderDiv"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
